@@ -10,7 +10,7 @@ fs.readFile(process.argv[0], function(err, data) {
 });*/
 
 //work on algo. while learning node.js
-//when reading in text file convert array of array
+//when reading in text file convert array of array O(n)
 const pricesText = [
   ["Candy Bar", 500],
   ["Paperback Book", 700],
@@ -26,4 +26,11 @@ const pricesText = [
     Highest two values is the correct answer. If only one or no items, return Not Possible 
     Runtime - O(n log n)
     Spacetime - O(n)
+*/
+
+/*
+    Don't store anything in data structure.
+    Read through input and keep track of the highest two numbers and their corresponding 
+    item that is less than or equal to gift card amount.
+    --edge case. if highest number cannot add up with any other number.
 */
