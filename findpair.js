@@ -1,20 +1,8 @@
-/*const fs = require("fs");
-
-for (let i = 0; i < process.argv.length; i++) {
-  console.log(process.argv[i]);
-}
-
-fs.readFile(process.argv[0], function(err, data) {
-  //returns a buffer... hmmm
-  console.log(data);
-});*/
-
 /*  
-    Sort in descending order based on pricesText[i][1] - O(n log n)
-    Iterate through the array for two values adding up to gift card value or under. O(n)
-    Highest two values is the correct answer. If only one or no items, return Not Possible 
-    Runtime - O(n log n)
-    Spacetime - O(n)
+    Sort input in descending order based on pricesText[i][1] - O(n log n)
+    Iterate through the array for two values adding up to gift card value or under. O(n^2)
+    If only one or no items, return Not Possible 
+    Runtime - O(n^2)
 */
 
 function findpair(priceList, value) {
@@ -26,17 +14,30 @@ function findpair(priceList, value) {
   let result = [];
 
   for (let i = 1; i < sorted.length; i++) {
-    if (sorted[i - 1][1] + sorted[i][1] <= value) {
-      result.push(sorted[i - 1]);
-      result.push(sorted[i]);
-      break;
+    //if price of item is larger than value. skip
+    if (!(sorted[i - 1][1] >= value)) {
+      let firstItem = sorted[i - 1][1];
+      for (let k = i; k < sorted.length; k++) {
+        //compare item #1 with any product in the list's sum.
+        //if equal to or under value of gift card. these two items are the correct answer.
+        if (firstItem + sorted[k][1] <= value) {
+          result.push(sorted[i - 1]);
+          result.push(sorted[k]);
+          break;
+        }
+      }
+      //if we have two items. break out of loop.
+      if (result.length === 2) {
+        break;
+      }
     }
   }
 
-  console.log(result);
-  if (result) {
+  if (result.length !== 0) {
+    console.log(result);
     return result;
   } else {
+    console.log("Not Possible");
     return "Not Possible";
   }
 }

@@ -1,0 +1,22 @@
+{
+  "name": "kindur-exercise-2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andrewywoo/kindur-exercise-2.git"
+  },
+  "author": "awoo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andrewywoo/kindur-exercise-2/issues"
+  },
+  "homepage": "https://github.com/andrewywoo/kindur-exercise-2#readme",
+  "devDependencies": {
+    "jest": "^24.8.0"
+  }
+}
