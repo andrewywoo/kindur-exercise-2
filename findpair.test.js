@@ -26,3 +26,11 @@ test("Execute findpair with prices inside price.text and value of 2300", () => {
 test("Execute findpair with prices inside price.text and value of 1100", () => {
   expect(findpair(prices, 1100)).toBe("Not Possible");
 });
+
+test("Execute findpair with no arguments", () => {
+  expect(findpair()).toBe("Invalid Arguments");
+});
+
+test("Execute findpair with invalid arguments", () => {
+  expect(findpair(1100, 100)).toBe("Invalid Arguments");
+});
