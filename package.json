@@ -2,7 +2,7 @@
   "name": "kindur-exercise-2",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "main.js",
   "scripts": {
     "test": "jest"
   },

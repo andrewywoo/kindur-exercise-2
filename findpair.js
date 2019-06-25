@@ -6,6 +6,15 @@
 */
 
 function findpair(priceList, value) {
+  if (!priceList && !value) {
+    console.log("Invalid Arguments");
+    return "Invalid Arguments";
+  }
+  if (!Array.isArray(priceList)) {
+    console.log("Invalid Arguments");
+    return "Invalid Arguments";
+  }
+
   //sort items by descending order
   const sorted = priceList.sort((a, b) => {
     return b[1] - a[1];
